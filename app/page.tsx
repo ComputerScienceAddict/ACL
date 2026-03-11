@@ -60,11 +60,11 @@ export default function Home() {
         <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3 sm:px-6 md:grid md:grid-cols-[1fr_auto_1fr] md:justify-items-stretch md:px-8">
           <a href="#" className="flex min-w-0 shrink items-center gap-2 no-underline sm:gap-3">
             <Image
-              src="/logo.jpg"
-              alt=""
+              src="/logo-acl.png"
+              alt="ACL Renovation Repairs"
               width={40}
               height={40}
-              className="size-9 shrink-0 rounded object-cover sm:size-10"
+              className="size-9 shrink-0 object-contain sm:size-10"
             />
             <span className="text-sm font-semibold tracking-tight text-white sm:text-base">ACL</span>
             <span className="hidden text-zinc-500 sm:inline">/</span>
@@ -92,12 +92,22 @@ export default function Home() {
         {/* Hero / Masthead */}
         <section className="relative overflow-hidden bg-black px-4 pt-16 pb-20 sm:px-6 sm:pt-20 sm:pb-28 md:pt-28 md:pb-36">
           <div className="absolute inset-0" aria-hidden>
+            <Image
+              src="/truck-black.png"
+              alt=""
+              fill
+              className="object-cover object-center"
+              priority
+              sizes="100vw"
+            />
+            <div className="absolute inset-0 bg-black/60" />
+            <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/70" />
             <Plasma
               color="#00a8e8"
               speed={0.6}
               direction="forward"
               scale={1.1}
-              opacity={0.8}
+              opacity={0.25}
               mouseInteractive={true}
             />
           </div>
@@ -158,16 +168,43 @@ export default function Home() {
               >
                 (559) 905-4991
               </a>
-              <p className="mt-4 text-sm text-zinc-500 sm:text-base">
-                <a href={telLink} className="min-h-[44px] inline-flex items-center py-2 hover:text-white">Call</a>
+              <p className="mt-4 text-base text-zinc-400 sm:text-lg">
+                <a href={telLink} className="min-h-[44px] inline-flex items-center py-2 font-medium text-[#00a8e8] hover:text-white">Call</a>
                 {" or "}
-                <a href={smsLink} className="min-h-[44px] inline-flex items-center py-2 hover:text-white">text</a>
+                <a href={smsLink} className="min-h-[44px] inline-flex items-center py-2 font-medium text-[#00a8e8] hover:text-white">text</a>
                 {" for a free quote"}
               </p>
             </div>
             </FadeIn>
           </div>
         </section>
+
+        {/* We Build Your Dreams + Flyer */}
+        <FadeIn>
+        <section className="relative overflow-hidden border-y border-[#00a8e8]/20 bg-gradient-to-r from-[#00a8e8]/5 via-transparent to-[#00a8e8]/5">
+          <div className="mx-auto flex max-w-6xl flex-col items-center gap-10 px-4 py-12 sm:flex-row sm:justify-between sm:gap-12 sm:py-16">
+            <div className="flex-1 text-center sm:text-left">
+              <p className="font-medium tracking-wide text-white sm:text-lg md:text-xl">
+                We Build Your Dreams
+              </p>
+              <p className="mt-2 text-sm text-zinc-300 sm:text-base">
+                Residential · Commercial · Remodels · Repairs
+              </p>
+            </div>
+            <div className="shrink-0">
+              <div className="w-48 overflow-hidden rounded-xl border border-zinc-700 shadow-xl shadow-black/30 transition-transform hover:scale-[1.02] sm:w-56 md:w-64">
+                <Image
+                  src="/flyer.png"
+                  alt="ACL Renovations & Repairs"
+                  width={256}
+                  height={341}
+                  className="aspect-[3/4] w-full object-cover object-top"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+        </FadeIn>
 
         {/* Project Gallery */}
         <FadeIn>
@@ -191,7 +228,7 @@ export default function Home() {
                   <span className="text-[#00a8e8]">Central Valley</span>
                 </h2>
                 <p className="mt-4 max-w-xl text-zinc-400 sm:mt-6 sm:text-lg">
-                  Stucco damage, bathroom remodels, garage conversions, sink refinishing—if it needs fixing or upgrading, we do it.
+                  Stucco, bathrooms, garages, sinks. Fix it or upgrade it.
                 </p>
               </div>
             </FadeIn>
@@ -202,7 +239,7 @@ export default function Home() {
                   <div className="flex flex-col gap-2 md:flex-row md:items-baseline md:justify-between md:gap-8">
                     <h3 className="text-lg text-white sm:text-xl md:text-2xl">Home Repairs</h3>
                     <p className="text-zinc-500 md:max-w-md md:text-right">
-                      Leaks, drywall, doors, fences—whatever breaks, we fix it
+                      Drywall. Doors. Fences. The stuff that wears out.
                     </p>
                   </div>
                 </div>
@@ -213,7 +250,7 @@ export default function Home() {
                   <div className="flex flex-col gap-2 md:flex-row md:items-baseline md:justify-between md:gap-8">
                     <h3 className="text-lg text-white sm:text-xl md:text-2xl">Renovations</h3>
                     <p className="text-zinc-500 md:max-w-md md:text-right">
-                      Bathrooms, kitchens, garages—full remodels done right
+                      Bathrooms, kitchens, garages. Permits pulled.
                     </p>
                   </div>
                 </div>
@@ -224,7 +261,7 @@ export default function Home() {
                   <div className="flex flex-col gap-2 md:flex-row md:items-baseline md:justify-between md:gap-8">
                     <h3 className="text-lg text-white sm:text-xl md:text-2xl">Installs</h3>
                     <p className="text-zinc-500 md:max-w-md md:text-right">
-                      Flooring, fixtures, appliances, window screens
+                      Flooring, appliances, fixtures. Screens, gutters.
                     </p>
                   </div>
                 </div>
@@ -235,7 +272,7 @@ export default function Home() {
                   <div className="flex flex-col gap-2 md:flex-row md:items-baseline md:justify-between md:gap-8">
                     <h3 className="text-lg text-[#00a8e8] sm:text-xl md:text-2xl">Stucco & Exterior</h3>
                     <p className="text-zinc-400 md:max-w-md md:text-right">
-                      Cracks, dents, impact damage—texture matching experts
+                      Cracks, dents, impact. We match the texture.
                     </p>
                   </div>
                 </div>
@@ -243,12 +280,12 @@ export default function Home() {
             </div>
 
             <FadeIn direction="up" delay={0.5}>
-              <div className="mt-10 rounded-xl border border-zinc-800 bg-zinc-900/30 p-5 sm:mt-16 sm:rounded-2xl sm:p-8">
-                <p className="mb-4 font-mono text-[10px] uppercase tracking-[0.3em] text-zinc-500">
+              <div className="mt-10 rounded-xl border border-zinc-700 bg-zinc-900/50 p-5 sm:mt-16 sm:rounded-2xl sm:p-8">
+                <p className="mb-4 font-mono text-[10px] uppercase tracking-[0.3em] text-zinc-400">
                   Everything else
                 </p>
-                <p className="max-w-4xl text-sm leading-relaxed text-zinc-400 sm:text-base">
-                  {services.slice(0, -1).join(" · ")} · and more. If you&apos;re not sure, just ask.
+                <p className="max-w-4xl text-sm leading-relaxed text-zinc-300 sm:text-base">
+                  {services.slice(0, -1).join(" · ")} · and more. Not sure? Just ask.
                 </p>
               </div>
             </FadeIn>
@@ -260,24 +297,64 @@ export default function Home() {
           <Testimonials />
         </FadeIn>
 
+        {/* Truck / Fleet section */}
+        <FadeIn>
+        <section className="relative overflow-hidden border-t border-white/5 bg-black py-16 sm:py-24">
+          <div className="mx-auto max-w-6xl px-4 sm:px-6">
+            <div className="grid gap-8 md:grid-cols-2 md:gap-12">
+              <div className="group relative overflow-hidden rounded-2xl">
+                <div className="aspect-[4/3] overflow-hidden bg-zinc-900">
+                  <Image
+                    src="/truck-gray.png"
+                    alt="ACL Renovation Repairs work truck"
+                    width={800}
+                    height={600}
+                    className="size-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+                </div>
+                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent p-4 sm:p-6">
+                  <p className="text-sm font-medium text-white">Licensed & Insured</p>
+                  <p className="text-xs text-zinc-400">Ready when you need us</p>
+                </div>
+              </div>
+              <div className="group relative overflow-hidden rounded-2xl">
+                <div className="aspect-[4/3] overflow-hidden bg-zinc-900">
+                  <Image
+                    src="/truck-black.png"
+                    alt="ACL Renovation Repairs fleet"
+                    width={800}
+                    height={600}
+                    className="size-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+                </div>
+                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent p-4 sm:p-6">
+                  <p className="text-sm font-medium text-white">Central Valley</p>
+                  <p className="text-xs text-zinc-400">Fresno & surrounding areas</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        </FadeIn>
+
         {/* Contact */}
         <FadeIn>
         <section id="contact" className="border-t border-white/5 bg-zinc-950 px-4 py-16 sm:px-6 sm:py-24">
           <div className="mx-auto max-w-3xl text-center">
-            <p className="text-base text-zinc-400 sm:text-lg">Get in touch</p>
-            <a
-              href={telLink}
-              className="mt-6 block min-h-[48px] font-mono text-3xl text-white hover:text-[#00a8e8] active:scale-[0.98] sm:text-4xl md:text-5xl"
-            >
-              (559) 905-4991
-            </a>
-            <a
-              href={mailLink}
-              className="mt-4 inline-block text-zinc-500 hover:text-white"
-            >
-              {email}
-            </a>
-            <div className="mt-10 flex items-center justify-center gap-10">
+                <p className="text-base text-zinc-400 sm:text-lg">Get in touch</p>
+                <a
+                  href={telLink}
+                  className="mt-6 block min-h-[48px] font-mono text-3xl text-white hover:text-[#00a8e8] active:scale-[0.98] sm:text-4xl md:text-5xl"
+                >
+                  (559) 905-4991
+                </a>
+                <a
+                  href={mailLink}
+                  className="mt-4 inline-block text-zinc-400 hover:text-[#00a8e8]"
+                >
+                  {email}
+                </a>
+                <div className="mt-10 flex items-center justify-center gap-10">
               <a href={facebookUrl} target="_blank" rel="noopener noreferrer" className="flex min-h-[44px] min-w-[44px] items-center justify-center text-zinc-600 hover:text-white active:scale-95" aria-label="Facebook">
                 <svg className="size-7 sm:size-6" fill="currentColor" viewBox="0 0 24 24"><path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"/></svg>
               </a>
@@ -285,9 +362,9 @@ export default function Home() {
                 <svg className="size-7 sm:size-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
               </a>
             </div>
-            <p className="mt-12 text-xs text-zinc-700">
-              Esteban Laureno · CSLB #1120817 · Licensed & Insured
-            </p>
+                <p className="mt-12 text-sm text-zinc-500">
+                  Esteban Laureno · CSLB #1120817 · Licensed & Insured
+                </p>
           </div>
         </section>
         </FadeIn>
@@ -298,11 +375,11 @@ export default function Home() {
           <div className="mx-auto flex max-w-5xl flex-col items-center gap-4 sm:flex-row sm:justify-between sm:gap-0">
             <div className="flex items-center gap-4">
               <Image
-                src="/logo.jpg"
+                src="/logo-acl.png"
                 alt="ACL Renovation Repairs"
                 width={36}
                 height={36}
-                className="size-9 object-cover"
+                className="size-9 object-contain"
               />
               <span className="text-sm text-zinc-600">ACL Renovation Repairs</span>
             </div>
