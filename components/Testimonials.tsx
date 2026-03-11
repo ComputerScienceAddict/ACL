@@ -67,7 +67,7 @@ function ReviewCard({
   return (
     <figure
       className={cn(
-        "relative h-full w-72 shrink-0 cursor-default overflow-hidden rounded-xl border border-zinc-200 bg-white p-5 shadow-[0_1px_3px_rgba(0,0,0,0.06)] transition-shadow hover:shadow-md"
+        "relative h-full w-[280px] shrink-0 cursor-default overflow-hidden rounded-xl border border-zinc-200 bg-white p-4 shadow-[0_1px_3px_rgba(0,0,0,0.06)] transition-shadow hover:shadow-md sm:w-72 sm:p-5"
       )}
     >
       <div className="flex gap-1">
@@ -93,8 +93,8 @@ function ReviewCard({
 
 export default function Testimonials() {
   return (
-    <section className="border-t border-zinc-200 bg-white px-6 py-20 md:py-28">
-      <p className="mb-12 text-center text-xs font-semibold uppercase tracking-widest text-zinc-400">
+    <section className="border-t border-zinc-200 bg-white px-4 py-16 sm:px-6 sm:py-20 md:py-28">
+      <p className="mb-8 text-center text-xs font-semibold uppercase tracking-widest text-zinc-400 sm:mb-12">
         What people are saying
       </p>
       <div className="relative flex w-full flex-col gap-4 overflow-hidden">

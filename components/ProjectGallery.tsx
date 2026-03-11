@@ -96,13 +96,13 @@ export default function ProjectGallery() {
   }, [next, prev]);
 
   return (
-    <section className="relative overflow-hidden bg-zinc-950 py-24">
+    <section className="relative overflow-hidden bg-zinc-950 py-12 sm:py-16 md:py-24">
       {/* Accent glow */}
       <div className="pointer-events-none absolute -top-40 left-1/2 h-80 w-full -translate-x-1/2 bg-gradient-to-b from-[#00a8e8]/10 to-transparent blur-3xl" />
       
-      <div className="relative mx-auto max-w-6xl px-6">
+      <div className="relative mx-auto max-w-6xl px-4 sm:px-6">
         {/* Header row */}
-        <div className="mb-14 flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
+        <div className="mb-8 flex flex-col gap-6 sm:mb-10 md:mb-14 md:flex-row md:items-end md:justify-between md:gap-8">
           <div className="flex-1">
             <div className="mb-4 flex items-center gap-4">
               <div className="h-px flex-1 bg-gradient-to-r from-[#00a8e8]/50 to-transparent" />
@@ -118,7 +118,7 @@ export default function ProjectGallery() {
                 exit={{ opacity: 0, y: -20 }}
                 transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
               >
-                <h2 className="text-4xl font-medium tracking-tight text-white md:text-5xl lg:text-6xl">
+                <h2 className="text-2xl font-medium tracking-tight text-white sm:text-3xl md:text-5xl lg:text-6xl">
                   {project.title}
                 </h2>
                 <p className="mt-2 flex items-center gap-2 text-sm text-zinc-500">
@@ -131,14 +131,14 @@ export default function ProjectGallery() {
               </motion.div>
             </AnimatePresence>
           </div>
-          <div className="flex items-center gap-4">
+            <div className="flex items-center gap-4">
             <div className="flex items-center gap-2">
               {projects.map((_, i) => (
                 <button
                   key={i}
                   onClick={() => { setActiveProject(i); setActiveImage(0); }}
-                  className={`h-1 rounded-full transition-all duration-500 ${
-                    i === activeProject ? "w-8 bg-[#00a8e8]" : "w-1 bg-zinc-700 hover:bg-zinc-500"
+                  className={`h-1.5 min-h-[12px] min-w-[12px] rounded-full transition-all duration-500 ${
+                    i === activeProject ? "w-8 bg-[#00a8e8]" : "w-2 bg-zinc-700 hover:bg-zinc-500"
                   }`}
                 />
               ))}
@@ -199,7 +199,7 @@ export default function ProjectGallery() {
         </div>
 
         {/* Thumbnail strip */}
-        <div className="mt-4 flex gap-2 overflow-x-auto py-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+        <div className="-mx-4 mt-4 flex gap-2 overflow-x-auto px-4 py-3 sm:mx-0 sm:px-0 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
           {images.map((img, i) => (
             <button
               key={img}
@@ -221,7 +221,7 @@ export default function ProjectGallery() {
         </div>
 
         {/* Project selector */}
-        <div className="mt-10 flex flex-wrap gap-x-8 gap-y-3 border-t border-zinc-800 pt-8">
+        <div className="mt-8 flex flex-wrap justify-center gap-x-6 gap-y-4 border-t border-zinc-800 pt-6 sm:justify-start sm:pt-8 md:gap-x-8">
           {projects.map((p, i) => (
             <button
               key={p.id}
@@ -229,7 +229,7 @@ export default function ProjectGallery() {
                 setActiveProject(i);
                 setActiveImage(0);
               }}
-              className={`text-sm transition-colors ${
+              className={`min-h-[44px] px-1 text-sm transition-colors ${
                 i === activeProject
                   ? "text-white"
                   : "text-zinc-600 hover:text-zinc-400"
@@ -251,12 +251,12 @@ export default function ProjectGallery() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 flex items-center justify-center bg-black p-4"
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black p-2 sm:p-4"
             onClick={() => setLightboxOpen(false)}
           >
             <button
               onClick={() => setLightboxOpen(false)}
-              className="absolute right-4 top-4 z-50 p-2 text-zinc-500 hover:text-white"
+              className="absolute right-2 top-2 z-50 flex min-h-[48px] min-w-[48px] items-center justify-center p-2 text-zinc-500 hover:text-white sm:right-4 sm:top-4"
             >
               <svg className="size-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
@@ -265,7 +265,7 @@ export default function ProjectGallery() {
 
             <button
               onClick={(e) => { e.stopPropagation(); prev(); }}
-              className="absolute left-4 top-1/2 z-50 -translate-y-1/2 p-2 text-zinc-500 hover:text-white"
+              className="absolute left-2 top-1/2 z-50 flex min-h-[48px] min-w-[48px] -translate-y-1/2 items-center justify-center p-2 text-zinc-500 hover:text-white sm:left-4"
             >
               <svg className="size-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
@@ -289,7 +289,7 @@ export default function ProjectGallery() {
 
             <button
               onClick={(e) => { e.stopPropagation(); next(); }}
-              className="absolute right-4 top-1/2 z-50 -translate-y-1/2 p-2 text-zinc-500 hover:text-white"
+              className="absolute right-2 top-1/2 z-50 flex min-h-[48px] min-w-[48px] -translate-y-1/2 items-center justify-center p-2 text-zinc-500 hover:text-white sm:right-4"
             >
               <svg className="size-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
