@@ -9,6 +9,7 @@ import { CanvasText } from "@/components/ui/canvas-text";
 
 const navItems = [
   { label: "Home", href: "#" },
+  { label: "About", href: "#about" },
   { label: "Services", href: "#services" },
   { label: "Contact", href: "#contact" },
 ];
@@ -75,6 +76,7 @@ export default function Home() {
             <GooeyNav items={navItems} initialActiveIndex={0} />
           </nav>
           <nav className="flex min-h-[44px] items-center gap-4 md:hidden">
+            <a href="#about" className="py-2 text-[13px] text-zinc-500 hover:text-white">About</a>
             <a href="#services" className="py-2 text-[13px] text-zinc-500 hover:text-white">Services</a>
             <a href="#contact" className="py-2 text-[13px] text-zinc-500 hover:text-white">Contact</a>
           </nav>
@@ -89,6 +91,62 @@ export default function Home() {
       </header>
 
       <main className="relative z-10">
+        {/* About Us - First thing visitors see */}
+        <section id="about" className="relative overflow-hidden border-b border-white/10 bg-zinc-950">
+          <div className="absolute inset-0" aria-hidden>
+            <Image
+              src="/truck-gray.png"
+              alt=""
+              fill
+              className="object-cover object-center opacity-20"
+              sizes="100vw"
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-zinc-950 via-zinc-950/95 to-zinc-950/80" />
+            <div className="absolute -right-32 -top-32 h-96 w-96 rounded-full bg-[#00a8e8]/20 blur-[120px]" />
+            <div className="absolute -left-24 bottom-0 h-64 w-64 rounded-full bg-[#00a8e8]/10 blur-[100px]" />
+            <div className="absolute inset-0 bg-[linear-gradient(180deg,transparent_0%,rgba(0,0,0,0.4)_100%)]" />
+          </div>
+          <div className="relative mx-auto max-w-5xl px-4 py-16 sm:px-6 sm:py-20 md:py-24">
+            <div className="grid gap-12 md:grid-cols-[minmax(0,1fr)_1.2fr] md:gap-16 md:items-center">
+              <FadeIn direction="left" delay={0} trigger="mount">
+                <div className="flex flex-col items-center md:items-start">
+                  <Image
+                    src="/logo-acl.png"
+                    alt=""
+                    width={120}
+                    height={120}
+                    className="size-24 sm:size-28 object-contain"
+                  />
+                  <h2 className="mt-6 text-2xl font-medium tracking-tight text-white sm:text-3xl">
+                    ACL Renovations & Repairs
+                  </h2>
+                  <p className="mt-2 text-[#00a8e8] font-medium">Esteban Laureno</p>
+                  <p className="mt-2 text-sm text-zinc-500">Owner · CSLB #1120817</p>
+                </div>
+              </FadeIn>
+              <FadeIn direction="right" delay={0.1} trigger="mount">
+                <div className="space-y-6">
+                  <p className="text-lg leading-relaxed text-zinc-300 sm:text-xl">
+                    We&apos;re your trusted local experts for home remodeling and repair. Plumbing, electrical, remodels, handyman work—we do it right.
+                  </p>
+                  <p className="text-base leading-relaxed text-zinc-500">
+                    Top-notch craftsmanship, exceptional service. Serving the Central Valley.
+                  </p>
+                  <a
+                    href="#contact"
+                    className="inline-flex items-center gap-2 text-[#00a8e8] font-medium hover:text-white transition-colors"
+                  >
+                    Get a free estimate
+                    <svg className="size-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                  </a>
+                </div>
+              </FadeIn>
+            </div>
+          </div>
+        </section>
+
         {/* Hero / Masthead */}
         <section className="relative overflow-hidden bg-black px-4 pt-16 pb-20 sm:px-6 sm:pt-20 sm:pb-28 md:pt-28 md:pb-36">
           <div className="absolute inset-0" aria-hidden>
@@ -184,12 +242,24 @@ export default function Home() {
         <section className="relative overflow-hidden border-y border-[#00a8e8]/20 bg-gradient-to-r from-[#00a8e8]/5 via-transparent to-[#00a8e8]/5">
           <div className="mx-auto flex max-w-6xl flex-col items-center gap-10 px-4 py-12 sm:flex-row sm:justify-between sm:gap-12 sm:py-16">
             <div className="flex-1 text-center sm:text-left">
-              <p className="font-medium tracking-wide text-white sm:text-lg md:text-xl">
+              <h2 className="font-semibold tracking-tight text-white sm:text-xl md:text-2xl">
                 We Build Your Dreams
-              </p>
+              </h2>
               <p className="mt-2 text-sm text-zinc-300 sm:text-base">
                 Residential · Commercial · Remodels · Repairs
               </p>
+              <p className="mt-6 text-sm leading-relaxed text-zinc-500 sm:text-base">
+                Licensed, insured, free quotes. We show up when we say we will.
+              </p>
+              <a
+                href="#contact"
+                className="mt-8 inline-flex items-center gap-2 font-medium text-[#00a8e8] hover:text-white transition-colors"
+              >
+                Get your free quote
+                <svg className="size-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </a>
             </div>
             <div className="shrink-0">
               <div className="w-48 overflow-hidden rounded-xl border border-zinc-700 shadow-xl shadow-black/30 transition-transform hover:scale-[1.02] sm:w-56 md:w-64">
